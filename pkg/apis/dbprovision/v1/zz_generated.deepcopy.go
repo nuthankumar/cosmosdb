@@ -56,7 +56,7 @@ func (in *DBProvisioning) DeepCopyObject() runtime.Object {
 func (in *DBProvisioningList) DeepCopyInto(out *DBProvisioningList) {
 	*out = *in
 	out.TypeMeta = in.TypeMeta
-	out.ListMeta = in.ListMeta
+	in.ListMeta.DeepCopyInto(&out.ListMeta)
 	if in.Items != nil {
 		in, out := &in.Items, &out.Items
 		*out = make([]DBProvisioning, len(*in))
