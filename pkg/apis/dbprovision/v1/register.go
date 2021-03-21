@@ -14,7 +14,7 @@ var SchemeGroupVersion = schema.GroupVersion{
 	Group:   "dbprovision.com",
 	Version: "v1",
 }
-var PaasResource = opkit.CustomResource{
+var CosmosResource = opkit.CustomResource{
 	Name:    "dbprovision",
 	Plural:  "dbprovision",
 	Group:   "dbprovision.com",
