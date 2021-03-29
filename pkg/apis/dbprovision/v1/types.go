@@ -20,14 +20,20 @@ type DBProvisioning struct {
 
 // custom spec
 type DBProvisioningSpec struct {
-	Message      string `json:"message,omitempty"`
-	Hello 	     string `json:"hello"`
-	Clientid     string `json:"clientid"`
-	Clientns     string `json:"clientns"`
-	Keyspacename string `json:"keyspacename"`
-	Rolename     string `json:"rolename"`
-	Servicename  string `json:"servicename"`
-	Username     string `json:"username"`
+	ClientID                    string `json:"clientid"`
+	ClientNamespace             string `json:"clientns"`
+	Keyspace                    string `json:"keyspacename"`
+	Datacenter                  string `json:"datacenter"`
+	KeyspaceTopology            string `json:"keyspacetopology"`
+	ReplicationFactor           string `json:"replicationfactor"`
+	Rolename                    string `json:"rolename"`
+	Servicename                 string `json:"servicename"`
+	CreateSchema                bool   `json:"createschema"`
+	Configmap                   string `json:"configmapname"`
+	SchemaScriptName            string `json:"schemascriptname"`
+	DefaultValueScriptName      string `json:"defaultvaluescriptname"`
+	CosmosCassandraContactPoint string `json:"cassandracontactpoint"`
+	CosmosCassandraPassword     string `json:"cassandrapassword"`
 }
 
 // custom status
@@ -45,4 +51,3 @@ type DBProvisioningList struct {
 
 	Items []DBProvisioning `json:"items"`
 }
-
